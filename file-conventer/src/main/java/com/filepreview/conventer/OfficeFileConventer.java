@@ -160,4 +160,25 @@ public class OfficeFileConventer {
         }
         this.logger.warn("stop openoffice success!");
     }
+    
+     // added by xuren.  用户测试转换功能
+    public void conventerToPdfTest(String inputFile, String outputFile) {
+        // 实际上关键的 文件转换代码就下面的几行
+        this.logger.info("进行文档转换:" + inputFile + " --> " + outputFile);
+        OfficeDocumentConverter converter = new OfficeDocumentConverter(this.officeManager);
+        File input = new File(inputFile);
+        File html = new File(outputFile);
+        converter.convert(input, html);
+    }
+
+    // added by xuren.  用户测试转换功能
+    public void conventerToHtmlTest(String inputFile, String outputFile) {
+        // 实际上关键的 文件转换代码就下面的几行
+        this.logger.info("进行文档转换:" + inputFile + " --> " + outputFile);
+        OfficeDocumentConverter converter = new OfficeDocumentConverter(this.officeManager);
+        File input = new File(inputFile);
+        File html = new File(outputFile);
+        converter.convert(input, html);
+    }
+    
 }
